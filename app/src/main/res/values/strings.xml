@@ -6,5 +6,8 @@
     <string name="change_volume">Изменить объём</string>
     <string name="history">История</string>
     <string name="glass_title">Нажмите чтобы добавить</string>
+    <string name="apply">Применить</string>
+    <string name="input_value_hint">Объём, мл.</string>
+    <string name="input_time_hint">ЧЧ:ММ</string>
 
 </resources>
