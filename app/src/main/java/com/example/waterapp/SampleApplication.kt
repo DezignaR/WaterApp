@@ -3,7 +3,6 @@ package com.example.waterapp
 import android.app.Application
 import ru.terrakok.cicerone.Cicerone
 
-
 class SampleApplication : Application() {
     private val cicerone = Cicerone.create()
     val router get() = cicerone.router
