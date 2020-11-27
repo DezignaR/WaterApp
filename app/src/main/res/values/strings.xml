@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">WaterApp</string>
+
+    <string name="today_title">Сегодня вы выпили</string>
+    <string name="count_water">%1$d мл.</string>
+    <string name="change_volume">Изменить объём</string>
+    <string name="history">История</string>
+    <string name="glass_title">Нажмите чтобы добавить</string>
+
 </resources>
