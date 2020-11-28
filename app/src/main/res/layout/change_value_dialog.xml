@@ -15,27 +15,16 @@
         app:srcCompat="@drawable/ic_bottom_handle" />
 
     <EditText
-        android:id="@+id/tiInputValue"
+        android:id="@+id/etInputValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_small"
         android:hint="@string/input_value_hint"
+        android:inputType="number"
         android:textColor="@color/main_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivHandle" />
-
-    <EditText
-        android:id="@+id/tdInputDate"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_small"
-        android:hint="@string/input_time_hint"
-        android:inputType="datetime"
-        android:textColor="@color/main_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiInputValue" />
 
     <View
         android:layout_width="@dimen/match_constraint"
@@ -46,7 +35,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnApply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tdInputDate" />
+        app:layout_constraintTop_toBottomOf="@+id/etInputValue" />
 
     <Button
         android:id="@+id/btnApply"
