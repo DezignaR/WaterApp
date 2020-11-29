@@ -22,6 +22,9 @@ class GeneralFragment : Fragment(R.layout.general_fragment) {
             setDataDB()
             setCountWater()
         }
+        btnHistory.setOnClickListener {
+            WaterApplication.INSTANCE.router.navigateTo(Screens.HistoryScreen(::getAllDB))
+        }
     }
 
     private fun setDataDB() {
@@ -29,9 +32,13 @@ class GeneralFragment : Fragment(R.layout.general_fragment) {
         WaterApplication.INSTANCE.database.waterDataDao().insertAll(waterData)
     }
 
+    private fun getAllDB(): List<WaterData> {
+        return WaterApplication.INSTANCE.database.waterDataDao().getAll()
+    }
+
     private fun setCountWater() {
         var count = 0
-        val wd: List<WaterData> = WaterApplication.INSTANCE.database.waterDataDao().getAll()
+        val wd = getAllDB()
         for (i in wd.indices) {
             count += wd[i].volume
         }
@@ -55,6 +62,6 @@ class GeneralFragment : Fragment(R.layout.general_fragment) {
     }
 
     private fun showDialog() {
-        ChangeDialogFragment.newInstance(::setGlassVolume).show(childFragmentManager, "")
+        ChangeVolumeFragment.newInstance(::setGlassVolume).show(childFragmentManager, "")
     }
 }

@@ -2,7 +2,9 @@
 <resources>
     <dimen name="match_constraint">0dp</dimen>
     <dimen name="delimiter_height">1dp</dimen>
+    <dimen name="toolbar_height">64dp</dimen>
 
+    <dimen name="space_little">4dp</dimen>
     <dimen name="space_small">12dp</dimen>
     <dimen name="space_medium">16dp</dimen>
     <dimen name="space_large">24dp</dimen>

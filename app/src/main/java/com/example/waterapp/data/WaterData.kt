@@ -7,16 +7,13 @@ import java.util.*
 data class WaterData(
     @PrimaryKey(autoGenerate = true) public val id: Int = 0,
     @ColumnInfo(name = "data") public var date: Date,
-    @ColumnInfo(name = "volume") public var volume: Int
+    @ColumnInfo(name = "volume") public var volume: Int,
 )
 
 @Dao
 interface WaterDataDao {
-    @Query("SELECT * FROM waterData")
+    @Query("SELECT * FROM waterData ORDER BY data DESC")
     fun getAll(): List<WaterData>
-
-    @Query("SELECT * FROM waterData WHERE :date ")
-    fun getAllByDate(date: Long): List<WaterData>
 
     @Insert
     fun insertAll(vararg waterData: WaterData)
@@ -30,6 +27,7 @@ class DateConverter {
     fun dateToTimestamp(date: Date?): Long? {
         return date?.time
     }
+
     @TypeConverter
     fun timestampToDate(timestamp: Long?): Date? = Date(timestamp!!)
 }
