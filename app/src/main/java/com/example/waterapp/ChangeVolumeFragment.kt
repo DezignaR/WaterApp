@@ -9,12 +9,12 @@ import com.example.waterapp.AppSettings.volume
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.change_value_dialog.*
 
-class ChangeDialogFragment : BottomSheetDialogFragment() {
+class ChangeVolumeFragment : BottomSheetDialogFragment() {
 
     companion object {
 
-        fun newInstance(onClick: (Int) -> Unit): ChangeDialogFragment {
-            val fragment = ChangeDialogFragment()
+        fun newInstance(onClick: (Int) -> Unit): ChangeVolumeFragment {
+            val fragment = ChangeVolumeFragment()
             fragment.onClick = onClick
             return fragment
         }
@@ -47,14 +47,12 @@ class ChangeDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun setGlassVolume() {
-        if (etInputValue.text.toString() == "") {
-            volume = 0
-            onClick(volume)
-            dismiss()
+        volume = if (etInputValue.text.toString() == "") {
+            0
         } else {
-            volume = ((etInputValue.text.toString()).toInt())
-            onClick(volume)
-            dismiss()
+            ((etInputValue.text.toString()).toInt())
         }
+        onClick(volume)
+        dismiss()
     }
 }

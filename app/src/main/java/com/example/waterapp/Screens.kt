@@ -1,6 +1,7 @@
 package com.example.waterapp
 
 import androidx.fragment.app.Fragment
+import com.example.waterapp.data.WaterData
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 object Screens {
@@ -8,7 +9,7 @@ object Screens {
         override fun getFragment(): Fragment? = GeneralFragment()
     }
 
-    object HistoryScreen : SupportAppScreen() {
+    data class HistoryScreen(val getAllDb: () -> List<WaterData>) : SupportAppScreen() {
         override fun getFragment(): Fragment? = HistoryFragment()
     }
 }
