@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        SampleApplication.INSTANCE.navigatorHolder.setNavigator(navigator)
-        SampleApplication.INSTANCE.router.newRootScreen(Screens.GeneralScreen)
+        WaterApplication.INSTANCE.navigatorHolder.setNavigator(navigator)
+        WaterApplication.INSTANCE.router.newRootScreen(Screens.GeneralScreen)
     }
 
     override fun onPause() {
-        SampleApplication.INSTANCE.navigatorHolder.removeNavigator()
+        WaterApplication.INSTANCE.navigatorHolder.removeNavigator()
         super.onPause()
     }
 }
